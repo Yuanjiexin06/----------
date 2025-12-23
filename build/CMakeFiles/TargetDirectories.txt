@@ -1,0 +1,3 @@
+/home/pixriq/桌面/Cpp_code/演讲比赛流程管理系统/build/CMakeFiles/app.dir
+/home/pixriq/桌面/Cpp_code/演讲比赛流程管理系统/build/CMakeFiles/edit_cache.dir
+/home/pixriq/桌面/Cpp_code/演讲比赛流程管理系统/build/CMakeFiles/rebuild_cache.dir

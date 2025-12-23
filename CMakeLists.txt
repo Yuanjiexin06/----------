@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 4.2.1)
+project(演讲比赛流程管理系统)
+include_directories(head)
+aux_source_directory(src SRC_LIST)
+add_executable(app ${SRC_LIST})
