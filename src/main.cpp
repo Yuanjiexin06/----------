@@ -22,6 +22,7 @@ int main() {
                 break;
             case 2:
                 // 查看往届记录的逻辑
+                
                 break;
             case 3:
                 // 清除往届记录的逻辑

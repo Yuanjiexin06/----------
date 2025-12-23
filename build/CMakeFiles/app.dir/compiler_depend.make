@@ -20,6 +20,7 @@ CMakeFiles/app.dir/src/main.cpp.o: /home/pixriq/桌面/Cpp_code/演讲比赛流�
   /usr/include/c++/13/bits/basic_string.tcc \
   /usr/include/c++/13/bits/char_traits.h \
   /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/codecvt.h \
   /usr/include/c++/13/bits/concept_check.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
@@ -30,6 +31,7 @@ CMakeFiles/app.dir/src/main.cpp.o: /home/pixriq/桌面/Cpp_code/演讲比赛流�
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
+  /usr/include/c++/13/bits/fstream.tcc \
   /usr/include/c++/13/bits/functexcept.h \
   /usr/include/c++/13/bits/functional_hash.h \
   /usr/include/c++/13/bits/hash_bytes.h \
@@ -106,6 +108,7 @@ CMakeFiles/app.dir/src/main.cpp.o: /home/pixriq/桌面/Cpp_code/演讲比赛流�
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/fstream \
   /usr/include/c++/13/functional \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/ios \
@@ -206,8 +209,10 @@ CMakeFiles/app.dir/src/main.cpp.o: /home/pixriq/桌面/Cpp_code/演讲比赛流�
   /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
@@ -244,6 +249,7 @@ CMakeFiles/app.dir/src/speechManager.cpp.o: /home/pixriq/桌面/Cpp_code/演讲�
   /usr/include/c++/13/bits/basic_string.tcc \
   /usr/include/c++/13/bits/char_traits.h \
   /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/codecvt.h \
   /usr/include/c++/13/bits/concept_check.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
@@ -254,6 +260,7 @@ CMakeFiles/app.dir/src/speechManager.cpp.o: /home/pixriq/桌面/Cpp_code/演讲�
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
+  /usr/include/c++/13/bits/fstream.tcc \
   /usr/include/c++/13/bits/functexcept.h \
   /usr/include/c++/13/bits/functional_hash.h \
   /usr/include/c++/13/bits/hash_bytes.h \
@@ -330,6 +337,7 @@ CMakeFiles/app.dir/src/speechManager.cpp.o: /home/pixriq/桌面/Cpp_code/演讲�
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/fstream \
   /usr/include/c++/13/functional \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/ios \
@@ -430,8 +438,10 @@ CMakeFiles/app.dir/src/speechManager.cpp.o: /home/pixriq/桌面/Cpp_code/演讲�
   /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
@@ -513,7 +523,11 @@ CMakeFiles/app.dir/src/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
 
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
+
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
@@ -571,21 +585,11 @@ CMakeFiles/app.dir/src/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
-/usr/include/c++/13/bits/streambuf_iterator.h:
-
-/usr/include/c++/13/bits/stringfwd.h:
-
-/usr/include/c++/13/bits/streambuf.tcc:
-
 /usr/include/c++/13/bits/stl_map.h:
 
 /usr/include/c++/13/bits/stl_iterator_base_funcs.h:
 
 /usr/include/c++/13/debug/assertions.h:
-
-/usr/include/c++/13/unordered_map:
-
-/usr/include/c++/13/bits/stl_deque.h:
 
 /usr/include/c++/13/bits/stl_bvector.h:
 
@@ -602,6 +606,12 @@ CMakeFiles/app.dir/src/main.cpp.o:
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/c++/13/bits/std_abs.h:
 
 /usr/include/c++/13/bits/requires_hosted.h:
 
@@ -657,7 +667,13 @@ CMakeFiles/app.dir/src/speechManager.cpp.o:
 
 /usr/include/c++/13/bits/hash_bytes.h:
 
-/usr/include/stdio.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/usr/include/c++/13/bits/ios_base.h:
+
+/usr/include/c++/13/bits/invoke.h:
+
+/usr/include/c++/13/bits/erase_if.h:
 
 /usr/include/c++/13/bits/alloc_traits.h:
 
@@ -721,17 +737,19 @@ CMakeFiles/app.dir/src/speechManager.cpp.o:
 
 /usr/include/c++/13/tuple:
 
-/usr/include/asm-generic/errno.h:
+/usr/include/stdio.h:
 
-/usr/include/c++/13/cwchar:
+/usr/include/c++/13/bits/codecvt.h:
+
+/usr/include/c++/13/new:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
 
 /usr/include/c++/13/bits/basic_string.h:
 
 /usr/include/asm-generic/errno-base.h:
 
 /usr/include/c++/13/cctype:
-
-/usr/include/c++/13/vector:
 
 /usr/include/endian.h:
 
@@ -777,10 +795,6 @@ CMakeFiles/app.dir/src/speechManager.cpp.o:
 
 /home/pixriq/桌面/Cpp_code/演讲比赛流程管理系统/head/speechManager.h:
 
-/usr/include/c++/13/bits/erase_if.h:
-
-/usr/include/c++/13/bits/invoke.h:
-
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
 /usr/include/c++/13/bits/stl_vector.h:
@@ -805,13 +819,31 @@ CMakeFiles/app.dir/src/speechManager.cpp.o:
 
 /usr/include/c++/13/bits/exception_defines.h:
 
+/usr/include/asm-generic/errno.h:
+
+/usr/include/c++/13/cwchar:
+
+/usr/include/c++/13/vector:
+
+/usr/include/c++/13/bits/fstream.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+
+/usr/include/features.h:
+
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /usr/include/c++/13/bits/exception_ptr.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+/usr/include/c++/13/bits/streambuf.tcc:
 
-/usr/include/c++/13/bits/ios_base.h:
+/usr/include/c++/13/bits/stl_deque.h:
+
+/usr/include/c++/13/unordered_map:
+
+/usr/include/c++/13/bits/streambuf_iterator.h:
+
+/usr/include/c++/13/bits/stringfwd.h:
 
 /usr/include/c++/13/bits/unordered_map.h:
 
@@ -854,6 +886,8 @@ CMakeFiles/app.dir/src/speechManager.cpp.o:
 /usr/include/c++/13/deque:
 
 /usr/include/c++/13/exception:
+
+/usr/include/c++/13/fstream:
 
 /usr/include/c++/13/ext/atomicity.h:
 
@@ -915,6 +949,10 @@ CMakeFiles/app.dir/src/speechManager.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
@@ -934,21 +972,3 @@ CMakeFiles/app.dir/src/speechManager.cpp.o:
 /usr/include/c++/13/bits/algorithmfwd.h:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
-
-/usr/include/features.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
-/usr/include/c++/13/new:
-
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
-/usr/include/c++/13/bits/std_abs.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:

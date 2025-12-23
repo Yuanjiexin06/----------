@@ -7,6 +7,8 @@ SpeechManager::SpeechManager()
     // 初始化比赛
     this->initSpeech();
     this->createSpeaker();
+    this->loadRecord();
+    //cout << "000000000000000000000000" << endl;
 }
 SpeechManager::~SpeechManager()
 {
@@ -57,14 +59,17 @@ void SpeechManager::startSpeech()
     // 开始第一轮比赛
     this->speechContest();
     // 显示晋级结果
-
+    this->showScore();
+    //第二轮比赛开始
+    this->m_Index++;
     // 抽签
-
+    this->speechDraw();
     // 开始第二轮比赛
-
+    this->speechContest();
     // 显示最终结果
-
+    this->showScore();
     // 保存分数到文件中
+    this->saveResult();
 }
 void SpeechManager::speechDraw()
 {
@@ -167,4 +172,98 @@ void SpeechManager::speechContest()
     cout << "请按任意键继续..." << endl;
     cin.ignore(); // 清除残留的回车
     cin.get();    // 等待用户按键
+}
+void SpeechManager::showScore()
+{
+    cout << "第<< " << this->m_Index << " >>轮比赛晋级选手信息如下：" << endl;
+    cout << "---------------------------------------------" << endl;
+    vector<int> v_Src; // 比赛选手容器
+    if (this->m_Index == 1)
+    {
+        v_Src = this->v2;
+    }
+    else
+    {
+        v_Src = this->vVictor;
+    }
+    for (vector<int>::iterator it = v_Src.begin(); it != v_Src.end(); it++)
+    {
+        cout << "选手编号: " << *it << " 姓名: " << this->m_Speaker[*it].m_Name << " 得分: " << this->m_Speaker[*it].m_Score[this->m_Index - 1] << endl;
+    }
+    cout << "---------------------------------------------" << endl;
+    cout << "请按任意键继续..." << endl;
+    cin.ignore(); // 清除残留的回车
+    cin.get();    // 等待用户按键
+}
+void SpeechManager::saveResult()
+{
+    ofstream ofs;
+    ofs.open("speech.csv", ios::out | ios::app); // 以追加方式打开文件
+    for (vector<int>::iterator it = this->vVictor.begin(); it != this->vVictor.end(); it++)
+    {
+        ofs << *it << "," << this->m_Speaker[*it].m_Name << "," << this->m_Speaker[*it].m_Score[0] << "," << this->m_Speaker[*it].m_Score[1] << endl;
+    }
+    ofs.close();
+
+    cout << "比赛结果已保存到speech.csv文件中。" << endl;
+}
+void SpeechManager::loadRecord()
+{
+    ifstream ifs("speech.csv", ios::in);
+    if (!ifs.is_open())
+    {
+        this->fileIsEmpty = true;
+        cout << "文件不存在或无法打开！" << endl;
+        ifs.close();
+        return;
+    }
+    char ch;
+    ifs >> ch;
+    if(ifs.eof()){
+        this->fileIsEmpty = true;
+        cout << "文件为空！" << endl;
+        ifs.close();
+        return;
+    }
+    this->fileIsEmpty = false;
+    ifs.putback(ch);
+    //读取文件内容
+    string date;
+    int index = 0;
+
+    //cout << "[DEBUG] 准备进入读取循环..." << endl;
+    while (ifs >> date)
+    {
+        //cout << "[DEBUG] 读到一行 raw data: [" << date << "]" << endl;
+
+
+        vector<string> v;
+        int pos = -1;
+        int start = 0;
+        while (true)
+        {
+            pos = date.find(",", start);
+            if (pos == -1)
+            {
+                break;
+            }
+            string temp = date.substr(start, pos - start);
+            v.push_back(temp);
+            start = pos + 1;
+        }
+        string last = date.substr(start);
+        v.push_back(last);
+        this->m_Record.insert(make_pair(index, v));
+        index++;
+    }
+    //cout << "[DEBUG] 循环结束，m_Record的大小是: " << m_Record.size() << endl;
+    ifs.close();
+
+    for (auto &record : m_Record) {
+        cout << "记录 " << record.first << ": ";
+        for (const auto &field : record.second) {
+            cout << field << " ";
+        }
+        cout << endl;
+    }
 }
