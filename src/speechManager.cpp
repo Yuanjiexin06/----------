@@ -117,7 +117,8 @@ void SpeechManager::speechContest()
     // 遍历所以比赛选手
     for (vector<int>::iterator it = v_Src.begin(); it != v_Src.end(); it++)
     {
-        // 评为打分
+        num++;
+        // 评委打分
         deque<double> d;
         for (int i = 0; i < 10; i++)
         {
@@ -132,7 +133,7 @@ void SpeechManager::speechContest()
         double sum = accumulate(d.begin(), d.end(), 0.0f); // 求和
         double avg = sum / (double)d.size();               // 求平均分
         //打印平均分
-        cout << "选手编号: " << *it << " 姓名: " << this->m_Speaker[*it].m_Name << " 得分: " << avg << endl;
+        //cout << "选手编号: " << *it << " 姓名: " << this->m_Speaker[*it].m_Name << " 得分: " << avg << endl;
         //将平均分放到map容器中
         this->m_Speaker[*it].m_Score[this->m_Index - 1] = avg;
         
@@ -145,7 +146,25 @@ void SpeechManager::speechContest()
             {
                 cout << "选手编号: " << it->second << " 姓名: " << this->m_Speaker[it->second].m_Name << " 得分: " << it->first << endl;
             }
+            //获取前三名
+            int count = 0;
+            for (multimap<double, int, greater<double>>::iterator it = groupScore.begin(); it != groupScore.end() && count < 3; it++ , count++)
+            {
+                if (this->m_Index == 1)
+                {
+                    this->v2.push_back(it->second);
+                }
+                else
+                {
+                    this->vVictor.push_back(it->second);
+                }
+            }
+            groupScore.clear(); // 清空容器 为下组比赛做准备
+            cout << "---------------------------------------------" << endl;
         }
-        
     }
+    cout << "第" << this->m_Index << "轮比赛结束" << endl;
+    cout << "请按任意键继续..." << endl;
+    cin.ignore(); // 清除残留的回车
+    cin.get();    // 等待用户按键
 }

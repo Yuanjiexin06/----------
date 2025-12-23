@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/pixriq/桌面/Cpp_code/演讲比赛流程管理系统/head
 
-CXX_FLAGS = 
+CXX_FLAGS = -g
 

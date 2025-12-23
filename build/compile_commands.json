@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/pixriq/桌面/Cpp_code/演讲比赛流程管理系统/build",
+  "command": "/usr/bin/g++  -I/home/pixriq/桌面/Cpp_code/演讲比赛流程管理系统/head -g -o CMakeFiles/app.dir/src/main.cpp.o -c /home/pixriq/桌面/Cpp_code/演讲比赛流程管理系统/src/main.cpp",
+  "file": "/home/pixriq/桌面/Cpp_code/演讲比赛流程管理系统/src/main.cpp",
+  "output": "CMakeFiles/app.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/pixriq/桌面/Cpp_code/演讲比赛流程管理系统/build",
+  "command": "/usr/bin/g++  -I/home/pixriq/桌面/Cpp_code/演讲比赛流程管理系统/head -g -o CMakeFiles/app.dir/src/speechManager.cpp.o -c /home/pixriq/桌面/Cpp_code/演讲比赛流程管理系统/src/speechManager.cpp",
+  "file": "/home/pixriq/桌面/Cpp_code/演讲比赛流程管理系统/src/speechManager.cpp",
+  "output": "CMakeFiles/app.dir/src/speechManager.cpp.o"
+}
+]

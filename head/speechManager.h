@@ -24,7 +24,7 @@ public:
     void speechDraw(); //抽签
     void speechContest(); // 比赛
 
-        std::vector<int> v1;
+    std::vector<int> v1;
     std::vector<int> v2;
     std::vector<int> vVictor;
     std::map<int, Speaker> m_Speaker;
