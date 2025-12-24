@@ -96,6 +96,7 @@ CMakeFiles/app.dir/src/main.cpp.o: /home/pixriq/桌面/Cpp_code/演讲比赛流�
   /usr/include/c++/13/cstddef \
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
+  /usr/include/c++/13/ctime \
   /usr/include/c++/13/cwchar \
   /usr/include/c++/13/cwctype \
   /usr/include/c++/13/debug/assertions.h \
@@ -585,6 +586,8 @@ CMakeFiles/app.dir/src/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+
 /usr/include/c++/13/bits/stl_map.h:
 
 /usr/include/c++/13/bits/stl_iterator_base_funcs.h:
@@ -779,8 +782,6 @@ CMakeFiles/app.dir/src/speechManager.cpp.o:
 
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
 /home/pixriq/桌面/Cpp_code/演讲比赛流程管理系统/src/main.cpp:
@@ -862,6 +863,8 @@ CMakeFiles/app.dir/src/speechManager.cpp.o:
 /usr/include/c++/13/bits/locale_classes.tcc:
 
 /usr/include/c++/13/clocale:
+
+/usr/include/c++/13/ctime:
 
 /usr/include/time.h:
 

@@ -30,6 +30,7 @@ int main() {
                 break;
             case 3:
                 // 清除往届记录的逻辑
+                sm.clearRecord();
                 break;
             case 0:
                 sm.exitSystem(); // 退出系统
