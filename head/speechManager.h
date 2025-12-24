@@ -27,6 +27,8 @@ public:
     void showScore(); // 显示成绩
     void saveResult(); // 保存成绩
     void loadRecord(); //加载往届记录
+    void showRecord(); //显示往届记录
+    void clearRecord(); //清空往届记录
 
 
 

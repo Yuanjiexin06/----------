@@ -33,6 +33,7 @@ void SpeechManager::initSpeech()
     this->vVictor.clear();
     this->m_Speaker.clear();
     this->m_Index = 1;
+    this->m_Record.clear();
 }
 void SpeechManager::createSpeaker()
 {
@@ -70,6 +71,11 @@ void SpeechManager::startSpeech()
     this->showScore();
     // 保存分数到文件中
     this->saveResult();
+
+    // 重置比赛
+    this->initSpeech();
+    this->createSpeaker();
+    this->loadRecord();
 }
 void SpeechManager::speechDraw()
 {
@@ -206,6 +212,8 @@ void SpeechManager::saveResult()
     ofs.close();
 
     cout << "比赛结果已保存到speech.csv文件中。" << endl;
+
+    this->fileIsEmpty = false;
 }
 void SpeechManager::loadRecord()
 {
@@ -213,7 +221,7 @@ void SpeechManager::loadRecord()
     if (!ifs.is_open())
     {
         this->fileIsEmpty = true;
-        cout << "文件不存在或无法打开！" << endl;
+        //cout << "文件不存在或无法打开！" << endl;
         ifs.close();
         return;
     }
@@ -221,7 +229,7 @@ void SpeechManager::loadRecord()
     ifs >> ch;
     if(ifs.eof()){
         this->fileIsEmpty = true;
-        cout << "文件为空！" << endl;
+        //cout << "文件为空！" << endl;
         ifs.close();
         return;
     }
@@ -230,14 +238,14 @@ void SpeechManager::loadRecord()
     //读取文件内容
     string date;
     int index = 0;
-
+    vector<string> v;
     //cout << "[DEBUG] 准备进入读取循环..." << endl;
     while (ifs >> date)
     {
         //cout << "[DEBUG] 读到一行 raw data: [" << date << "]" << endl;
 
 
-        vector<string> v;
+        
         int pos = -1;
         int start = 0;
         while (true)
@@ -253,17 +261,58 @@ void SpeechManager::loadRecord()
         }
         string last = date.substr(start);
         v.push_back(last);
-        this->m_Record.insert(make_pair(index, v));
-        index++;
+        if (v.size() == 12){
+
+            this->m_Record.insert(make_pair(index, v));
+            index++;
+            v.clear();
+        }
     }
     //cout << "[DEBUG] 循环结束，m_Record的大小是: " << m_Record.size() << endl;
     ifs.close();
+}
+void SpeechManager::showRecord(){
 
-    for (auto &record : m_Record) {
-        cout << "记录 " << record.first << ": ";
-        for (const auto &field : record.second) {
-            cout << field << " ";
+    if (this->fileIsEmpty)
+    {
+        cout << "文件不存在或文件为空，无法显示往届记录！" << endl;
+        cout << "---------------------------------------------" << endl;
+        cout << "请按任意键继续..." << endl;
+        cin.ignore(); // 清除残留的回车
+        cin.get();    // 等待用户按键
+        return;
+    }else{
+        for (int i = 0; i < this->m_Record.size(); i++)
+        {
+            cout << "第" << i + 1 << "届比赛信息如下：" << endl;
+            cout << "冠军编号: " << this->m_Record[i][0] << " 姓名: " << this->m_Record[i][1] << " 得分1: " << this->m_Record[i][2] << " 得分2: " << this->m_Record[i][3] << endl
+                 << "亚军编号: " << this->m_Record[i][4] << " 姓名: " << this->m_Record[i][5] << " 得分1: " << this->m_Record[i][6] << " 得分2: " << this->m_Record[i][7] << endl
+                 << "季军编号: " << this->m_Record[i][8] << " 姓名: " << this->m_Record[i][9] << " 得分1: " << this->m_Record[i][10] << " 得分2: " << this->m_Record[i][11] << endl;
         }
-        cout << endl;
+        cout << "---------------------------------------------" << endl;
+        cout << "请按任意键继续..." << endl;
+        cin.ignore(); // 清除残留的回车
+        cin.get();    // 等待用户按键
     }
+}
+void SpeechManager::clearRecord(){
+    cout << "确认清空往届记录？" << endl;
+    cout << "1. 确认" << endl;
+    cout << "2. 取消" << endl;
+    int choice;
+    cout << "请输入您的选择:>";
+    cin >> choice; // 用户输入选择
+    if (choice == 1){
+        ofstream ofs("speech.csv", ios::trunc);
+        ofs.close();
+        this->m_Record.clear();
+        this->fileIsEmpty = true;
+        cout << "往届记录已清空！" << endl;
+    } else {
+        cout << "已取消清空操作！" << endl;
+    }
+    cout << "---------------------------------------------" << endl;
+    cout << "请按任意键继续..." << endl;
+    cin.ignore(); // 清除残留的回车
+    cin.get();    // 等待用户按键
 }

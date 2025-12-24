@@ -1,10 +1,14 @@
 #include <iostream>
+#include <ctime>
 
 #include "speechManager.h"
 #include "speaker.h"
 using namespace std;
 
 int main() {
+
+    //添加随机数种子
+    srand((unsigned int)time(NULL));
     SpeechManager sm; // 创建演讲比赛管理对象
     //测试
     // for (map<int, Speaker>::iterator it = sm.m_Speaker.begin(); it != sm.m_Speaker.end(); ++it) {
@@ -22,7 +26,7 @@ int main() {
                 break;
             case 2:
                 // 查看往届记录的逻辑
-                
+                sm.showRecord();
                 break;
             case 3:
                 // 清除往届记录的逻辑
